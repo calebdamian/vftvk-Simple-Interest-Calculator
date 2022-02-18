@@ -8,9 +8,6 @@ function compute()
         var year = new Date().getFullYear()+parseInt(years);
         var result = document.getElementById("result");
         result.innerHTML = "<strong>If you deposit <span>"+principal+"</span>,\<br\> at an interest rate of <span>"+rate+"</span>%.\<br\> You will receive an amount of <span>"+ interest+"</span>,\<br\>in the year <span>"+year+"</span>\<br\></strong>"
-    }else{
-        alert("Enter a positive number");
-        document.getElementById("principal").focus();
     }
  
 }
@@ -23,9 +20,10 @@ function updateRate(){
 function validarCampo(){
     var principal = document.getElementById("principal").value;
     if(principal<0 || principal==0 || principal ==""){
+        alert("Enter a positive number");
+        document.getElementById("principal").focus();
         return false;
     }else{
-
         return true;
     }
 
